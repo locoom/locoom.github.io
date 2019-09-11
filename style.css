@@ -337,6 +337,7 @@ html {
 .logo__wordmark {
     padding-left: calc(8/26 * 1em);
     letter-spacing: -0.03em;
+    padding-top: 0.2em;
 }
 
 .logo__wordmark--heavy {
