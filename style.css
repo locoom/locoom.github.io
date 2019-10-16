@@ -151,25 +151,25 @@ html {
     z-index: 1;
 }
 
-.topMenu:not(.topMenu--withJs) {
+.topMenu--sticky:not(.topMenu--withJs) {
     position: absolute;
 }
 
-.topMenu--withJs {
+.topMenu--sticky.topMenu--withJs {
     position: fixed;
 }
 
-.topMenu--scrolledRecently {
+.topMenu--sticky.topMenu--scrolledRecently {
     transition: none .2s ease-in-out;
     transition-property: color, background-color, box-shadow;
 }
 
-.topMenu:not(.topMenu--scrolledDown):not(.topMenu--unfolded) {
+.topMenu--sticky.topMenu:not(.topMenu--scrolledDown):not(.topMenu--unfolded) {
     color: white;
 }
 
-.topMenu--scrolledDown,
-.topMenu--unfolded {
+.topMenu--sticky.topMenu--scrolledDown,
+.topMenu--sticky.topMenu--unfolded {
     background: white;
     box-shadow: 0 2px 3vh rgba(0, 0, 0, 0.2);
 }
