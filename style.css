@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-:not(br) {
-    line-height: 1.5;
-}
-
 a {
     text-decoration: none;
 }
@@ -19,6 +15,7 @@ html, body {
 html {
     font-family: Montserrat, sans-serif;
     color: #262C2C;
+    line-height: 1.5;
 }
 
 :focus {
