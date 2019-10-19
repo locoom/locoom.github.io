@@ -244,19 +244,16 @@ html {
     opacity: 0.6;
 }
 
-.topMenu--inArticle .topMenu__textOptions a,
-.topMenu--inArticle .topMenu__iconOptions a,
+.topMenu--inArticle a,
 .topMenu--inArticle label.topMenu__openMenu {
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
-.topMenu--inArticle .topMenu__textOptions a:hover,
-.topMenu--inArticle .topMenu__iconOptions a:hover {
+.topMenu--inArticle a:hover {
     opacity: 0.8;
 }
 
-.topMenu--inArticle .topMenu__textOptions a:active,
-.topMenu--inArticle .topMenu__iconOptions a:active {
+.topMenu--inArticle a:active {
     opacity: 1;
 }
 
