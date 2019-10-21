@@ -281,26 +281,39 @@
             document.querySelectorAll('form').forEach(function(form) {
                 form.addEventListener('submit', function(event) {
                     if (typeof window.gtag !== 'function') return;
-                    gtag('event', 'Submit', {
+                    const label = (
+                        event.target.getAttribute('data-analytics-label') ||
+                        'Unknown form'
+                    );
+                    gtag('event', 'Form submitted', {
                         event_category: 'Forms',
-                        event_label: (
-                            event.target.getAttribute('data-analytics-label') ||
-                            'Unknown form'
-                        ) + ' submitted',
+                        event_label: label,
+                    });
+                });
+            });
+
+            // Link analytics
+            document.querySelectorAll('a[href]').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    if (typeof window.gtag !== 'function') return;
+                    const category = (link.target === '_blank' ? 'Outbound' : 'Inbound');
+                    gtag('event', 'Link clicked', {
+                        event_category: category,
+                        event_label: link.href,
                     });
                 });
             });
 
             // Parallax scrolling
-           const parallax = document.querySelectorAll('.parallax');
-           function updateScroll() {
-               parallax.forEach(function(element) {
-                   element.style.top = Math.min(-window.scrollY / 5) + 'px';
-               });
-           };
-           updateScroll
-           document.addEventListener('scroll', updateScroll);
-        })()
+            const parallax = document.querySelectorAll('.parallax');
+            function updateScroll() {
+                parallax.forEach(function(element) {
+                    element.style.top = Math.min(-window.scrollY / 5) + 'px';
+                });
+            };
+            updateScroll
+            document.addEventListener('scroll', updateScroll);
+        })();
     </script>
 </body>
 </html>
