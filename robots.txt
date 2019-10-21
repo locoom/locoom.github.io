@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Disallow: /5-powodow-inwestycja-w-locoom-59371c86590e/
