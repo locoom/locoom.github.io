@@ -233,7 +233,7 @@
                         <!-- TODO <span class="logo__suffix">sp. z o. o.</span> -->
                     </div>
                     <dl class="contactDetails__details">
-                        <a href="mailto:info@locoom.co">
+                        <a href="mailto:info@locoom.co" target="_blank">
                             <dt>
                                 <svg width="24" height="24" viewBox="0 0 24 24"><title>Adres email</title><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8l-8,5L4,8V6 l8,5l8-5V8z" fill="currentColor" /></svg>
                             </dt>
@@ -280,12 +280,16 @@
             // Form submit analytics
             document.querySelectorAll('form').forEach(function(form) {
                 form.addEventListener('submit', function(event) {
+                    if (typeof window.gtag !== 'function') return;
                     gtag('event', 'Submit', {
                         event_category: 'Forms',
-                        event_label: event.target.getAttribute('data-analytics-label'),
+                        event_label: (
+                            event.target.getAttribute('data-analytics-label') ||
+                            'Unknown form'
+                        ) + ' submitted',
                     });
                 });
-            })
+            });
 
             // Parallax scrolling
            const parallax = document.querySelectorAll('.parallax');
