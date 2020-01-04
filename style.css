@@ -570,7 +570,7 @@ html {
 }
 
 .footer__section--dark {
-    background: #4C5757;
+    background: #313838;
     color: white;
 }
 
@@ -598,15 +598,15 @@ html {
         display: flex;
         flex-direction: column;
         flex-grow: 20;
-        border-bottom: solid 2px #4C5757;
+        border-bottom: solid 4px #313838;
     }
 
     .footer__filler {
-        height: 50%;
+        height: 100%;
         background-position: center center;
         background-size: cover;
-        border: solid #4C5757;
-        border-width: 2px 0 0 2px;
+        border: solid #313838;
+        border-width: 4px 0 0 4px;
     }
 
     .footer__filler--image1 {
@@ -614,6 +614,8 @@ html {
     }
 
     .footer__filler--image2 {
+        display: none;
+        background-position: 30% 50%;
         background-image:
             linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
             url(/images/footer-filler-image-2.jpg);
@@ -626,8 +628,11 @@ html {
     }
 
     .footer__filler {
-        height: 100%;
         width: 50%;
+    }
+
+    .footer__filler--image2 {
+        display: initial;
     }
 
     .footer__section--pilotProgram {
